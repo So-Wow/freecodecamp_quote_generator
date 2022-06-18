@@ -36,12 +36,18 @@ class QuoteBox extends React.Component {
 
     render() {
         return (
-            <div id="quote-box" >
-                <blockquote id="text">{this.state.quote}</blockquote>
-                <h4 id="author">{this.state.author}</h4>
-                <button id="new-quote" type="button" onClick={this.handleClick}>New Quote</button>
-                <a className="button" id="tweet-quote" target="_blank" href="twitter.com/intent/tweet">Tweet</a>
-            </div>
+            <div id="quote-box" className="container" >
+                <figure className="text-center">
+                    <blockquote id="text" className="blockquote">
+                        <p>{this.state.quote}</p>
+                    </blockquote>
+                    <figcaption className="blockquote-footer" id="author">Source: <cite title={this.state.author}>{this.state.author}</cite></figcaption>
+                </figure>
+                <div className="row">
+                    <div className="col"><button id="new-quote" type="button" className="btn btn-primary" onClick={this.handleClick}>New Quote</button></div>
+                    <div className="col"><a className="button" id="tweet-quote" target="_blank" href="twitter.com/intent/tweet">Tweet</a></div>
+                </div>
+            </div >
         );
     }
 }
