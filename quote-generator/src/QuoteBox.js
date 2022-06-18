@@ -1,5 +1,6 @@
 import React from "react";
 import "bootstrap-icons/font/bootstrap-icons.css";
+import quotesData from "./quotes.json";
 
 class QuoteBox extends React.Component {
     constructor(props) {
@@ -7,7 +8,7 @@ class QuoteBox extends React.Component {
         this.state = {
             quote: '',
             author: '',
-            quotes: [{ quote: "I think, therefore I am", author: "René Descartes" }, { quote: "It is better to be feared than loved, if you cannot be both.", author: "Niccolo Machiavelli" }, { quote: "There is no charm equal to tenderness of heart", author: "Jane Austen" }, { quote: "Being entirely honest with oneself is a good exercise.", author: "Sigmund Freud" }]
+            quotes: [...quotesData]
         }
         this.handleClick = this.handleClick.bind(this);
         this.genQuote = this.genQuote.bind(this);
@@ -40,9 +41,9 @@ class QuoteBox extends React.Component {
             <div id="quote-box" className="container" >
                 <figure className="text-center">
                     <blockquote id="text" className="blockquote">
-                        <p>{this.state.quote}</p>
+                        <p>"{this.state.quote}"</p>
                     </blockquote>
-                    <figcaption className="blockquote-footer" id="author">Source: <cite title={this.state.author}>{this.state.author}</cite></figcaption>
+                    <figcaption className="blockquote-footer" id="author"><cite title={this.state.author}>{this.state.author}</cite></figcaption>
                 </figure>
                 <div className="row">
                     <div className="col"><button id="new-quote" type="button" className="btn btn-primary" onClick={this.handleClick}>New Quote</button></div>
