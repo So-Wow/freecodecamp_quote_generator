@@ -40,7 +40,7 @@ class QuoteBox extends React.Component {
                 <blockquote id="text">{this.state.quote}</blockquote>
                 <h4 id="author">{this.state.author}</h4>
                 <button id="new-quote" type="button" onClick={this.handleClick}>New Quote</button>
-                <a className="button" id="tweet-quote" href="twitter.com/intent/tweet">Tweet</a>
+                <a className="button" id="tweet-quote" target="_blank" href="twitter.com/intent/tweet">Tweet</a>
             </div>
         );
     }
