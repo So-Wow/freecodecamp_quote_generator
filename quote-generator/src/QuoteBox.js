@@ -1,4 +1,5 @@
 import React from "react";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 class QuoteBox extends React.Component {
     constructor(props) {
@@ -6,7 +7,7 @@ class QuoteBox extends React.Component {
         this.state = {
             quote: '',
             author: '',
-            quotes: [{ quote: "this is quote one", author: "one" }, { quote: "this is quote two", author: "two" }, { quote: "this is quote three", author: "three" }, { quote: "this is quote four", author: "four" }]
+            quotes: [{ quote: "I think, therefore I am", author: "René Descartes" }, { quote: "It is better to be feared than loved, if you cannot be both.", author: "Niccolo Machiavelli" }, { quote: "There is no charm equal to tenderness of heart", author: "Jane Austen" }, { quote: "Being entirely honest with oneself is a good exercise.", author: "Sigmund Freud" }]
         }
         this.handleClick = this.handleClick.bind(this);
         this.genQuote = this.genQuote.bind(this);
@@ -45,7 +46,7 @@ class QuoteBox extends React.Component {
                 </figure>
                 <div className="row">
                     <div className="col"><button id="new-quote" type="button" className="btn btn-primary" onClick={this.handleClick}>New Quote</button></div>
-                    <div className="col"><a className="button" id="tweet-quote" target="_blank" href="twitter.com/intent/tweet">Tweet</a></div>
+                    <div className="col"><a className="button" id="tweet-quote" target="_blank" href="twitter.com/intent/tweet"><i className="bi bi-twitter"></i></a></div>
                 </div>
             </div >
         );
